@@ -1,0 +1,12 @@
+id: DET-001
+title: Encoded PowerShell download cradle
+mitre: T1059.001
+severity: high
+match:
+  all:
+    - field: process.name
+      equals: powershell.exe
+    - field: process.cmdline
+      contains_any: ["-enc", "frombase64string", "downloadstring", "invoke-webrequest"]
+must_hit: [evt-ps-cradle]
+must_miss: [evt-ps-benign]

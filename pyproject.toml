@@ -1,0 +1,13 @@
+[project]
+name = "detection-replay-lab"
+version = "0.1.0"
+description = "Deterministic detection content with replay tests. Lab-grade."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Gabriel Pokiano"}]
+license = {text = "MIT"}
+dependencies = ["pyyaml>=6.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

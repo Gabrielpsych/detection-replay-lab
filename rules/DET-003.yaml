@@ -1,0 +1,12 @@
+id: DET-003
+title: Non-system process touching LSASS
+mitre: T1003.001
+severity: high
+match:
+  all:
+    - field: target.name
+      equals: lsass.exe
+    - field: process.name
+      contains_any: ["procdump", "rundll32", "taskmgr-copy"]
+must_hit: [evt-lsass]
+must_miss: [evt-lsass-system]

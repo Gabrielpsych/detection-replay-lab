@@ -1,0 +1,12 @@
+id: DET-004
+title: Scheduled task with remote payload
+mitre: T1053.005
+severity: medium
+match:
+  all:
+    - field: event.action
+      equals: scheduled_task_create
+    - field: task.command
+      contains_any: ["http://", "https://", "certutil", "mshta"]
+must_hit: [evt-schtask]
+must_miss: [evt-schtask-benign]

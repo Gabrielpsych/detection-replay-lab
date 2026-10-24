@@ -1,0 +1,12 @@
+id: DET-005
+title: Defense exclusion followed by archive drop
+mitre: T1562.001
+severity: high
+match:
+  all:
+    - field: event.action
+      equals: defender_exclusion_add
+    - field: exclusion.path
+      contains: "\\temp"
+must_hit: [evt-exclusion]
+must_miss: [evt-exclusion-programfiles]

